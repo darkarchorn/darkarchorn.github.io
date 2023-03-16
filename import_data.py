@@ -27,7 +27,7 @@ cnx = mysql.connector.connect(
 cursor = cnx.cursor()
 
 # execute the SQL query
-query = "SELECT JSON_ARRAYAGG(JSON_OBJECT('enrollment_number', enrollment_number, 'id', id)) AS students FROM w42g2_lms.users_user;"
+query = "SELECT JSON_ARRAYAGG(JSON_OBJECT('enrollment_number', enrollment_number, 'id', id)) AS students FROM darkarchorn$w42g2_lms.users_user;"
 cursor.execute(query)
 
 result = json.loads(cursor.fetchone()[0])
