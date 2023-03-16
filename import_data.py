@@ -17,8 +17,8 @@ else:
 
 # create a connection to the database
 cnx = mysql.connector.connect(
-    host="localhost",
-    user="root",
+    host="darkarchorn.mysql.pythonanywhere-services.com",
+    user="darkarchorn",
     password="thangthang1!",
     database="darkarchorn$w42g2_lms"
 )

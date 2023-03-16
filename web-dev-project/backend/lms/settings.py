@@ -86,7 +86,7 @@ DATABASES = {
     'default': {  
         'ENGINE': 'django.db.backends.mysql',  
         'NAME': 'darkarchorn$w42g2_lms',  
-        'USER': 'root',  
+        'USER': 'darkarchorn',  
         'PASSWORD': 'thangthang1!', 
         'HOST': 'darkarchorn.mysql.pythonanywhere-services.com',  
         'PORT': '3306',  
