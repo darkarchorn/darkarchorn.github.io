@@ -20,9 +20,9 @@
 --
 
 UNLOCK TABLES;
-drop database if exists w42g2_lms;
-create database w42g2_lms;
-use w42g2_lms;
+drop database if exists darkarchorn$w42g2_lms;
+create database darkarchorn$w42g2_lms;
+use darkarchorn$w42g2_lms;
 
 DROP TABLE IF EXISTS `auth_group`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

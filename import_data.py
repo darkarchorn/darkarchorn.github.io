@@ -20,7 +20,7 @@ cnx = mysql.connector.connect(
     host="localhost",
     user="root",
     password="thangthang1!",
-    database="w42g2_lms"
+    database="darkarchorn$w42g2_lms"
 )
 
 # create a cursor object to execute the SQL query
