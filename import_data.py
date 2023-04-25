@@ -17,17 +17,17 @@ else:
 
 # create a connection to the database
 cnx = mysql.connector.connect(
-    host="darkarchorn.mysql.pythonanywhere-services.com",
-    user="darkarchorn",
+    host="localhost",
+    user="root",
     password="thangthang1!",
-    database="darkarchorn$w42g2_lms"
+    database="w42g2_lms"
 )
 
 # create a cursor object to execute the SQL query
 cursor = cnx.cursor()
 
 # execute the SQL query
-query = "SELECT JSON_ARRAYAGG(JSON_OBJECT('enrollment_number', enrollment_number, 'id', id)) AS students FROM darkarchorn$w42g2_lms.users_user;"
+query = "SELECT JSON_ARRAYAGG(JSON_OBJECT('enrollment_number', enrollment_number, 'id', id)) AS students FROM w42g2_lms.users_user;"
 cursor.execute(query)
 
 result = json.loads(cursor.fetchone()[0])
@@ -74,7 +74,8 @@ for i in range(0, len(data), 11):
     all["Họ và tên"] = data[i+2].strip()
     all["Ngày sinh"] = data[i+3].strip()
     all["Lớp khóa học"] = data[i+4].strip()
-    all["Mã LMH"] = data[i+5].strip()
+    all["Mã LMH"] = data[i+5].strip().replace(" ", "_")
+
     all["Tên môn học"] = data[i+6].strip()
     all["Nhóm"] = data[i+7].strip()
     all["Số TC"] = data[i+8].strip()
@@ -96,7 +97,8 @@ course_student = []
 for i in range(0, len(data), 11):
     all = {}
     all["Mã SV"] = data[i+1].strip()
-    all["Mã LMH"] = data[i+5].strip()
+    all["Mã LMH"] = data[i+5].strip().replace(" ", "_")
+
     course_student.append(all)
 
 courses_course = []
@@ -104,7 +106,7 @@ unique_pairs = set()
 
 for i in range(0, len(data), 11):
     course_dict = {}
-    ma_lm = data[i+5].strip()
+    ma_lm = data[i+5].strip().replace(" ", "_")
     ten_mon_hoc = data[i+6].strip()
     course_pair = (ma_lm, ten_mon_hoc)
     

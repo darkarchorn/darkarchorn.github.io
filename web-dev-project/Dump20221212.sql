@@ -3,6 +3,10 @@
 -- Host: localhost    Database: w42g2_lms
 -- ------------------------------------------------------
 -- Server version	8.0.28
+unlock tables;
+drop database if exists w42g2_lms;
+create database w42g2_lms;
+use w42g2_lms;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;

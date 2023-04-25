@@ -2,7 +2,7 @@
 set MYSQL_HOME=C:\Program Files\MySQL\MySQL Server 8.0
 set SCRIPT_DIR=%~dp0
 
-set MYSQL_USER=darkarchorn
+set MYSQL_USER=root
 set MYSQL_PASSWORD=thangthang1!
 
 set /p confirm=Do you want to run the SQL script? (y/no)
