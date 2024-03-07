@@ -11,7 +11,7 @@ const handleOnMove = e => {
   if (track.dataset.mouseDownAt === "0") return;
   
   const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-        maxDelta = window.innerWidth / 0.25; // Adjust this value for reduced sensitivity
+        maxDelta = window.innerWidth / 0.14; // Adjust this value for reduced sensitivity
   
   const percentage = (mouseDelta / maxDelta) * -100,
         nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
@@ -25,10 +25,18 @@ const handleOnMove = e => {
   
   for (const image of track.getElementsByClassName("image")) {
     image.animate({
-      objectPosition: `${100 + nextPercentage}% center`
+      objectPosition: `${100 + nextPercentage*2}% center`
     }, { duration: 1200, fill: "forwards" });
   }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  const images = document.querySelectorAll("img"); // Lấy tất cả thẻ <img>
+  images.forEach(function(img) {
+    img.classList.add("image"); // Thêm class "image"
+    img.setAttribute("draggable", false); // Thêm thuộc tính draggable = false
+  });
+});
 
 /* -- Had to add extra lines for touch events -- */
 
